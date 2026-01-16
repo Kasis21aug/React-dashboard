@@ -5,7 +5,7 @@ A simple product dashboard built with React that displays products in a table wi
 ---
 
 ##Live Demo (Deployed URL)
-🔗 https://your-deployed-link-here.com
+🔗 https://react-dashboard-beta-ashy.vercel.app/
 
 ---
 
