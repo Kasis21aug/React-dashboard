@@ -1,0 +1,67 @@
+# Development Documentation (1 Page)
+
+## Overview
+This project is a React-based Product Dashboard that displays a list of products in a table and supports basic product management features such as editing the product title, deleting a product, and filtering products using dropdown filters. Since the assignment required using dummy data and mock API calls, the entire project is implemented without a real backend and simulates API behavior using `Promise` and `setTimeout`.
+
+---
+
+## Development Approach
+I built the project phase-by-phase, focusing on completing one feature at a time to avoid breaking multiple parts together.
+
+### 1) Data Layer (Local Database)
+- Created a local product dataset using dummy product data (20–30 products).
+- Stored the cleaned product list in a dedicated file (`products.js`) to keep it separate from UI and logic.
+- This file acts as the “database” for the project.
+
+### 2) Mock API Layer
+To simulate backend behavior, I created a mock API file (`productApi.js`) with:
+- `getProducts()` to fetch the product list
+- `updateProductTitle(id, newTitle)` to update the title
+- `deleteProduct(id)` to remove a product
+
+Each API function returns a Promise with a delay using `setTimeout` to mimic real API response time.
+
+### 3) UI Implementation
+The dashboard UI was developed in a structured way:
+- Built a table component (`ProductTable.jsx`) to display products.
+- Implemented title editing using an input field and saved changes using `onBlur`.
+- Added a delete button for each row to remove products using the mock API.
+- Added dropdown filters for brand, category, price range, and rating range.
+
+### 4) Filtering Logic
+Filters were implemented in the parent component (`Dashboard.jsx`) to keep logic centralized.
+- Brand and category dropdown options are dynamically generated based on the currently filtered dataset.
+- Price and rating filters were implemented as range-based dropdowns for better usability.
+
+### 5) Extra Improvements
+- Added a Reset Filters button to clear all selected filters.
+- Implemented loading and error handling during product fetch.
+- Displayed a “No results found” message when filters return an empty list.
+
+---
+
+## Challenges Faced & Solutions
+
+### Challenge 1: Edited title not persisting after refresh
+**Issue:** After editing a product title, it updated on UI but reverted back after refreshing the page.  
+**Solution:** Since the mock backend data resets on refresh, persistence is not automatic. A possible improvement is storing updated data in `localStorage` so changes remain after reload.
+
+### Challenge 2: Dynamic filter values
+**Issue:** Filters needed to update based on currently available results (with other filters applied).  
+**Solution:** I generated dropdown options by applying all filters except the current one and extracting unique values from the remaining results.
+
+### Challenge 3: Price and rating filtering
+**Issue:** Exact value filters were not user-friendly and did not match real-world filtering behavior.  
+**Solution:** Implemented price and rating filters using predefined ranges, which improved usability and made filtering more practical.
+
+---
+
+## Final Outcome
+The final dashboard meets the required functionality:
+- Displays products in a clean table format
+- Supports title editing with mock API save
+- Allows deleting products
+- Supports dynamic dropdown filtering and range filtering
+- Includes reset, loading, error handling, and no-results message
+
+This approach ensured the code stayed modular, beginner-friendly, and easy to extend for future improvements.
