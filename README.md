@@ -52,19 +52,19 @@ http://localhost:5173
 
 📁 Project Structure
 
-src/data/products.js
+src/data/products.js:- 
 Local product data (acts like a database)
 
-src/api/productApi.js
+src/api/productApi.js:- 
 Mock API functions (get products, update title, delete product)
 
-src/pages/Dashboard.jsx
+src/pages/Dashboard.jsx:- 
 Main dashboard page (filters + table + state handling)
 
-src/components/ProductTable.jsx
+src/components/ProductTable.jsx:- 
 Product table UI (editable title + delete button)
 
-src/App.css
+src/App.css:- 
 Basic styling for dashboard and table
 
 🔧 Notes / Configuration
