@@ -1,16 +1,76 @@
-# React + Vite
+# React Product Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple product dashboard built with React that displays products in a table with editable title, delete functionality, and column-based filters (including price & rating ranges). Data operations are handled using a mock API with Promise + setTimeout.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##Live Demo (Deployed URL)
+🔗 https://your-deployed-link-here.com
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Technologies Used
+- React (Vite)
+- JavaScript (ES6)
+- CSS
+- Mock API (Promise + setTimeout)
+- Git & GitHub
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+- Display products in a table:
+  - Title (Editable)
+  - Brand
+  - Category
+  - Price
+  - Rating
+- Edit product title (saved via mock API on blur)
+- Delete product row (saved via mock API)
+- Filters for:
+  - Brand (dynamic)
+  - Category (dynamic)
+  - Price Range (dropdown)
+  - Rating Range (dropdown)
+- Reset filters button
+- Loading and error state handling
+- "No results found" message when filters return no data
+
+---
+
+## Setup Instructions (Run Locally)
+
+### 1) Clone the repository
+```bash
+git clone https://github.com/Kasis21aug/React-dashboard.git
+cd React-dashboard
+npm install
+npm run dev
+Open the URL shown in your terminal (example):
+http://localhost:5173
+```
+
+📁 Project Structure
+
+src/data/products.js
+Local product data (acts like a database)
+
+src/api/productApi.js
+Mock API functions (get products, update title, delete product)
+
+src/pages/Dashboard.jsx
+Main dashboard page (filters + table + state handling)
+
+src/components/ProductTable.jsx
+Product table UI (editable title + delete button)
+
+src/App.css
+Basic styling for dashboard and table
+
+🔧 Notes / Configuration
+
+This project uses a mock API (no real backend).
+
+Updates are stored in memory while the app is running.
+
+To persist changes after refresh, you can store updated products in localStorage.
